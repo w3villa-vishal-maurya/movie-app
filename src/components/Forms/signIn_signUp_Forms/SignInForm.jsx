@@ -1,8 +1,8 @@
-import React, { useContext, useState } from "react";
+import React, {useState } from "react";
 import { Button, FloatingLabel, Form } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
 import * as ROUTES from "../../../constants/routes";
-import { authURL, movieURL } from "../../../api/axios";
+import { authURL} from "../../../api/axios";
 import "./index.scss";
 
 const LOGIN_URL = "/api/login";
@@ -13,8 +13,8 @@ export default function SignInForm() {
 
   const [emailAddress, setEmailAddress] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
-  const [token, setToken] = useState("");
+  const [error,] = useState("");
+  const [setToken] = useState("");
 
   const isInvalid = password === "" || emailAddress === "";
 

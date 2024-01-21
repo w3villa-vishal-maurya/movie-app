@@ -1,9 +1,9 @@
-import React, { useContext, useState } from "react";
+import React, {useState } from "react";
 import { Button, FloatingLabel, Form } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
 import * as ROUTES from "../../../constants/routes";
 import "./index.scss";
-import { authURL, movieURL } from "../../../api/axios";
+import { authURL} from "../../../api/axios";
 
 const REG_URL = "/api/register";
 
@@ -14,8 +14,8 @@ export default function SignUpForm() {
   // const [ firstName, setFirstName ] = useState('');
   const [emailAddress, setEmailAddress] = useState("");
   const [password, setPassword] = useState("");
-  const [token, setToken] = useState("")
-  const [error, setError] = useState("");
+  const [setToken] = useState("")
+  const [error] = useState("");
 
   const isInvalid = password === "" || emailAddress === "";
 
