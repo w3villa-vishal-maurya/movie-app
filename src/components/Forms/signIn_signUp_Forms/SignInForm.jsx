@@ -14,7 +14,7 @@ export default function SignInForm() {
   const [emailAddress, setEmailAddress] = useState("");
   const [password, setPassword] = useState("");
   const [error,] = useState("");
-  const [setToken] = useState("");
+  const [token,setToken] = useState("");
 
   const isInvalid = password === "" || emailAddress === "";
 
