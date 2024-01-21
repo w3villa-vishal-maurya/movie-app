@@ -1,0 +1,175 @@
+@import "./fonts.scss";
+@import "./variables.scss";
+
+//Font Weights
+@mixin extra-light() {
+	font-weight: 100;
+	font-family: "Netflix Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+@mixin light() {
+	font-weight: 300;
+	font-family: "Netflix Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+@mixin regular() {
+	font-weight: 400;
+	font-family: "Netflix Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+@mixin medium() {
+	font-weight: 700;
+	font-family: "Netflix Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+@mixin bold() {
+	font-weight: 800;
+	font-family: "Netflix Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+@mixin heavy() {
+	font-weight: 900;
+	font-family: "Netflix Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+//Font Styling
+//64px
+@mixin jumbotronHeader() {
+	@include medium();
+	font-size: 4rem;
+	line-height: 4.375rem;
+}
+
+//50px
+@mixin header() {
+	@include medium();
+	font-size: 3.125rem;
+	line-height: 3.438rem;
+}
+
+//40px
+@mixin headerMobile() {
+	@include medium();
+	font-size: 2.5rem;
+	line-height: 2.75rem;
+}
+
+//32px
+@mixin subHeader() {
+	@include medium();
+	font-size: 2rem;
+}
+
+//26px
+@mixin subTitle($weight) {
+	font-size: 1.625rem;
+	line-height: 2.188rem;
+
+	@if $weight == "bold" {
+		@include bold();
+	} @else if $weight == "medium" {
+		@include medium();
+	} @else if $weight == "regular" {
+		@include regular();
+	}
+}
+
+//20px
+@mixin subTitleMobile($weight) {
+	font-size: 1.25rem;
+	line-height: 1.875rem;
+
+	@if $weight == "bold" {
+		@include bold();
+	} @else if $weight == "medium" {
+		@include medium();
+	} @else if $weight == "regular" {
+		@include regular();
+	}
+}
+
+//16px
+@mixin body($weight) {
+	font-size: 1rem;
+	line-height: 1.563rem;
+
+	@if $weight == "bold" {
+		@include bold();
+	} @else if $weight == "medium" {
+		@include medium();
+	} @else if $weight == "regular" {
+		@include regular();
+	} @else if $weight == "light" {
+		@include light();
+	}
+}
+
+//13px
+@mixin caption($weight) {
+	font-size: 0.813rem;
+	line-height: 1.25rem;
+
+	@if $weight == "bold" {
+		@include bold();
+	} @else if $weight == "medium" {
+		@include medium();
+	} @else if $weight == "regular" {
+		@include regular();
+	} @else if $weight == "light" {
+		@include light();
+	}
+}
+
+//Buttons
+@mixin buttons() {
+	background-color: $netflix-red !important;
+	border: 0;
+	border-radius: 0.125rem;
+	cursor: pointer;
+	transition: 0.5s;
+
+	&:hover {
+		filter: brightness(80%);
+	}
+}
+
+@mixin inputPlaceholder() {
+	$selector: "";
+	$prefixes: (
+		moz: "::-moz",
+		webkit: "::-webkit",
+		ie: ":-ms",
+	);
+	@each $prop, $value in $prefixes {
+		@if $prop != "moz" {
+			$selector: #{$value}-input-placeholder;
+		} @else {
+			$selector: #{$value}-placeholder;
+		}
+		@if & {
+			&#{$selector} {
+				@content;
+			}
+		} @else {
+			#{$selector} {
+				@content;
+			}
+		}
+	}
+	&::placeholder {
+		@content;
+	}
+}
+
+//Media Queries
+@mixin max-media-query($size) {
+	@if ($size) {
+		@media (max-width: $size) {
+			@content;
+		}
+	}
+}
+
+@mixin min-media-query ($size) {
+	@if ($size) {
+		@media (min-width: $size) {
+			@content;
+		}
+	}
+}
+

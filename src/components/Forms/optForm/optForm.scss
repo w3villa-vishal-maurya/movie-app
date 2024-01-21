@@ -1,0 +1,33 @@
+@import "../../../styles/mixins.scss";
+
+.optFormSection {
+  .form-floating {
+    label {
+      color: $lt-medium-gray;
+    }
+
+    input {
+      border: 0;
+      border-radius: 2px;
+    }
+  }
+
+	a {
+    @include buttons();
+    @include subTitle(regular);
+    display: flex;
+		align-items: center;
+    justify-content: center;
+    height: 3.625rem !important;
+    margin: 0 !important;
+    padding: 0 0 0 0.125rem;
+    
+    @media (max-width: 767px){
+      margin-top: 1rem !important;
+    }
+
+		svg {
+			margin-left: 8px;
+		}
+	}
+}
