@@ -21,13 +21,11 @@ export default function SignInForm() {
   const handleSignIn = async (e) => {
     try {
       e.preventDefault();
-      console.log("Hello");
       const response = await authURL.post(LOGIN_URL, {
         email: emailAddress,
         password: password,
       });
 
-      console.log(response?.data);
       if (response?.data?.token) {
         setToken(response?.data?.token);
         alert("Successfully Login!");

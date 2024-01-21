@@ -11,12 +11,10 @@ export default function SearchForm({ searchTerm, setSearchTerm }) {
 
   const navigate = useNavigate();
 
-  console.log(searchData);
 
   const activateSearch = (e) => {
     try {
       e.preventDefault();
-      console.log({ vishal: searchData });
      
       navigate(`/feature?search=${searchData}&page=1`);
 

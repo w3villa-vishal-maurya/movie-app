@@ -19,7 +19,6 @@ const CreateMovie = () => {
 
         const MOVIE_URL = `/?i=${movieId}&apikey=${API_KEY_OMBD}`;
         const response = await movieURL.get(MOVIE_URL);
-        console.log(response.data);
         setMovie(response.data);
       } catch (err) {
         console.log(err);

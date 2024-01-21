@@ -22,13 +22,11 @@ export default function SignUpForm() {
   const handleSignUp = async (e) => {
     try {
       e.preventDefault();
-      console.log("Hello");
       const response = await authURL.post(REG_URL, {
         email: emailAddress,
         password: password,
       });
 
-      console.log(response?.data);
       if(response?.data?.token){
         setToken(response?.data?.token);
         alert("Successfully Registred!");

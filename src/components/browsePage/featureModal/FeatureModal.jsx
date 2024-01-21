@@ -3,7 +3,7 @@ import {movieURL } from "../../../api/axios";
 import "./featureModal.scss";
 import { useLocation, useNavigate } from "react-router-dom";
 import { API_KEY_OMBD } from "../../../constants/url";
-import ReactPaginate from "https://cdn.skypack.dev/react-paginate@7.1.3";
+import ReactPaginate from "react-paginate";
 import NavBar from "../navBar/NavBar";
 
 export default function FeatureModal() {
